@@ -24,7 +24,7 @@
         <button type="submit" class="btn btn-danger" (click)="borrarArticulo(articulo.codigo)">Borrar</button>
       </th>
       <th scope="row">
-        <button type="submit" class="btn btn-success">Seleccionar</button>
+        <button type="submit" class="btn btn-success" (click)="seleccionarArticulo(articulo.codigo)">Seleccionar</button>
       </th>
     </tr>
   </tbody>
@@ -33,18 +33,21 @@
   <form class="form-row">
     <div class="form-group col-md-2">
       <label for="codigo">Codigo</label>
-      <input type="number" class="form-control" name="codigo" [(ngModel)]="codigoInput">
+      <input type="number" class="form-control" name="codigo" min="0" required [(ngModel)]="codigoInput">
     </div>
     <div class="form-group col-md-2">
       <label for="descripcion">Descripcion</label>
-      <input type="text" class="form-control" name="descripcion" [(ngModel)]="descripcionInput">
+      <input type="text" class="form-control" name="descripcion" required [(ngModel)]="descripcionInput">
     </div>
     <div class="form-group col-md-2">
       <label for="precio">Precio</label>
-      <input type="number" class="form-control" name="precio" [(ngModel)]="precioInput">
+      <input type="number" class="form-control" name="precio" required [(ngModel)]="precioInput">
     </div>
-    <div class="col">
+    <div class="col p-3">
       <button type="sudmit" class="btn btn-primary" (click)="agregarArticulo()">Agregar Artículo</button>
+    </div>
+    <div class="col p-3">
+      <button type="sudmit" class="btn btn-info" (click)="modificarArticulo()">Modificar Artículo</button>
     </div>
   </form>
 </div>
